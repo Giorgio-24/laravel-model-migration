@@ -15,7 +15,9 @@ class CreateTravelsTable extends Migration
     {
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('destination', 100);
+            $table->float('price', 10, 2)->unsigned(); //^Con unsigned non può essere negativo.
+            $table->timestamps(); //^Meglio se sta per ultima.
         });
     }
 
